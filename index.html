@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Lisa</title>
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+    }
+
+    button {
+      padding: 12px 20px;
+      background: #4f46e5;
+      border: none;
+      color: white;
+      cursor: pointer;
+      border-radius: 6px;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: #6366f1;
+    }
+
+    .small {
+      font-size: 14px;
+      opacity: 0.8;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container" id="page1">
+  <h1>About Lisa</h1>
+  <button onclick="enterSite()">Enter Lisa's Site</button>
+</div>
+
+<div class="container" id="page2" style="display:none;">
+  <p class="small">
+    Lisa is workin on this site so might be a while.<br>
+    Lisa is a person who loves pepperoni pizza & coke.
+  </p>
+</div>
+
+<script>
+  function enterSite() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
