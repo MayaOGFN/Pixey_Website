@@ -51,16 +51,22 @@
 </div>
 
 <div class="container" id="page2" style="display:none;">
-  <p class="small">
-    Lisa is workin on this site so might be a while.<br>
-    Lisa is a person who loves pepperoni pizza & coke.
+  <p class="small" id="lisaText">
+    Loading Lisa's info...
   </p>
 </div>
 
 <script>
-  function enterSite() {
+  async function enterSite() {
     document.getElementById("page1").style.display = "none";
     document.getElementById("page2").style.display = "block";
+
+    const res = await fetch("/api/lisa");
+    const data = await res.json();
+
+    document.getElementById("lisaText").innerHTML =
+      `Lisa is workin on this site so might be a while.<br>
+       Lisa is a person who loves ${data.likes[0]} & ${data.likes[1]}.`;
   }
 </script>
 
